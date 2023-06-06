@@ -1,20 +1,36 @@
 import { Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { IButtonProps } from "../../constants/Types";
 
 const PrimaryButton = ({ ...props }: IButtonProps) => (
   <TouchableOpacity
     {...props}
-    style={[styles.container, props.disabled ? styles.disabled : null]}
+    style={[
+      styles.container,
+      props.style,
+      props.disabled ? styles.disabled : null,
+    ]}
   >
     {props.leftIconSource && (
       <Image style={styles.icon} source={props.leftIconSource} />
     )}
+    {props.leftFontAwesomeIconName && (
+      <FontAwesome
+        color="#ffffff"
+        size={28}
+        name={props.leftFontAwesomeIconName}
+      />
+    )}
+    {props.leftIcon && props.leftIcon}
     {props.title && (
       <Text style={[styles.text, props.disabled ? styles.disabledText : null]}>
         {props.title}
       </Text>
     )}
+
+    {props.rightFontAwesomeIconName && <FontAwesome size={28} />}
+    {props.rightIcon && props.rightIcon}
     {props.rightIconSource && (
       <Image style={styles.icon} source={props.rightIconSource} />
     )}
@@ -37,8 +53,11 @@ const styles = StyleSheet.create({
     paddingVertical: PADDING_VERTICAL,
     paddingHorizontal: PADDING_HORIZONTAL,
     display: "flex",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    flexWrap: "nowrap",
+    gap: 16,
   },
   text: {
     fontFamily: "Manrope",

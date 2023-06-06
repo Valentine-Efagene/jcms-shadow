@@ -5,7 +5,11 @@ import { IButtonProps } from "../../constants/Types";
 const OutlineButton = ({ ...props }: IButtonProps) => (
   <TouchableOpacity
     {...props}
-    style={[styles.container, props.disabled ? styles.disabled : null]}
+    style={[
+      styles.container,
+      props.style,
+      props.disabled ? styles.disabled : null,
+    ]}
   >
     {props.leftIconSource && (
       <Image style={styles.icon} source={props.leftIconSource} />

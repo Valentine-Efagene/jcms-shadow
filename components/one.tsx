@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
+import EditScreenInfo from "./EditScreenInfo";
+import { Text, View } from "./Themed";
 
 export default function TabOneScreen() {
   return (

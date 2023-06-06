@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import { OutlineButton, PrimaryButton } from "../../components/AppButton";
+import PrimaryButton from "../buttons/PrimaryButton";
+import OutlineButton from "../buttons/OutineButton";
 export const onboardingFinalName = "OnboardingFinal";
 
 const OnboardingFinal = () => {

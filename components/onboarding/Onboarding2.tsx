@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { PrimaryButton } from "../../components/AppButton";
 import { IOnboardingTab } from "../../constants/Types";
+import PrimaryButton from "../buttons/PrimaryButton";
 export const onboardingFinalName = "OnboardingFinal";
 
 const Onboarding2 = ({ onNext }: IOnboardingTab) => {

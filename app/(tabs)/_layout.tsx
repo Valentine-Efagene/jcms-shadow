@@ -1,5 +1,6 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
+import { StyleSheet } from "react-native";
 import { Pressable, useColorScheme } from "react-native";
 
 import Colors from "../../constants/Colors";
@@ -22,11 +23,12 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
       }}
+      sceneContainerStyle={styles.scene}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Tab One",
+          title: "Onboarding",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -47,10 +49,39 @@ export default function TabLayout() {
       <Tabs.Screen
         name="forgot-password"
         options={{
-          title: "Forgot Password",
+          title: "Forgot P",
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="login"
+        options={{
+          title: "Login",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="sign-in" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="login-face"
+        options={{
+          title: "Login F",
+          tabBarIcon: ({ color }) => <TabBarIcon name="blind" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="registration"
+        options={{
+          title: "Reg",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="sign-in" color={color} />
+          ),
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  scene: { backgroundColor: "#fff" },
+});

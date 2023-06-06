@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
 import React, { useState, useMemo } from "react";
 import Stepper from "../Stepper";
 import Onboarding2 from "./Onboarding2";
@@ -18,7 +18,7 @@ const Onboarding = () => {
     );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Stepper
           options={options}
@@ -30,7 +30,7 @@ const Onboarding = () => {
         {current === 1 && <Onboarding3 onNext={onNext} />}
         {current === 2 && <OnboardingFinal />}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -38,16 +38,17 @@ export default Onboarding;
 
 const styles = StyleSheet.create({
   container: {
-    padding: "1rem",
     flex: 1,
     display: "flex",
     paddingBottom: 80,
   },
   content: {
+    padding: 16,
     display: "flex",
     gap: 16,
     marginTop: "auto",
     height: "40%",
+    marginBottom: 50,
   },
   stepper: {},
 });

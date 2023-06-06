@@ -1,15 +1,16 @@
 import { StyleSheet } from "react-native";
-import { View, Text } from "../../../components/Themed";
-import { PrimaryInput } from "../../../components/inputs/PrimaryInput";
-import { PrimaryButton } from "../../../components/AppButton";
+import { View } from "../../../components/Themed";
+import PrimaryInput from "../../../components/inputs/PrimaryInput";
+import Label from "../../../components/Label";
+import PrimaryButton from "../../../components/buttons/PrimaryButton";
 
 export default function () {
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Create Password</Text>
-      <PrimaryInput placeholder="" />
-      <Text style={styles.label}>Confirm Password</Text>
-      <PrimaryInput placeholder="" />
+      <Label>Create Password</Label>
+      <PrimaryInput secureTextEntry={true} />
+      <Label>Confirm Password</Label>
+      <PrimaryInput secureTextEntry={true} />
       <PrimaryButton title="Done" />
     </View>
   );
@@ -18,13 +19,5 @@ export default function () {
 const styles = StyleSheet.create({
   container: {
     gap: 16,
-  },
-  label: {
-    fontFamily: "Manrope",
-    fontStyle: "normal",
-    fontWeight: "500",
-    fontSize: 14,
-    lineHeight: 19,
-    color: "#000000",
   },
 });

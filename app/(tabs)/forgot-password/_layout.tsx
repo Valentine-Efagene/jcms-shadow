@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+// https://medium.com/@peterpme/taming-react-natives-scrollview-with-flex-144e6ff76c08
+
+import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
 import { Text, View } from "../../../components/Themed";
@@ -15,7 +17,7 @@ export default function TabOneScreen() {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ["80%"], []);
+  const snapPoints = useMemo(() => ["60%"], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
@@ -23,8 +25,10 @@ export default function TabOneScreen() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text>Open</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.crm}>
+        <Text style={styles.crmText}>CRM</Text>
+      </View>
       <BottomSheet
         ref={bottomSheetRef}
         index={0}
@@ -32,7 +36,7 @@ export default function TabOneScreen() {
         onChange={handleSheetChanges}
       >
         <BottomSheetView style={styles.bottomSheet}>
-          <View style={styles.content}>
+          <ScrollView contentContainerStyle={styles.content}>
             <Text style={styles.title}>Forgot Password</Text>
             <Slot />
             <TabStepper
@@ -43,10 +47,10 @@ export default function TabOneScreen() {
                 "/forgot-password/change",
               ]}
             />
-          </View>
+          </ScrollView>
         </BottomSheetView>
       </BottomSheet>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -57,19 +61,33 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#151646",
   },
+  crm: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "auto",
+    height: "40%",
+  },
+  crmText: {
+    fontFamily: "Manrope",
+    fontStyle: "normal",
+    fontWeight: "600",
+    fontSize: 24,
+    lineHeight: 33,
+    color: "#FFFFFF",
+  },
   bottomSheet: {
     flex: 1,
     textAlign: "left",
   },
-  stepper: {
-    marginTop: "auto",
-    marginBottom: 50,
-  },
+  stepper: {},
   content: {
-    flex: 1,
+    display: "flex",
+    justifyContent: "space-between",
+    flexGrow: 1,
     padding: 16,
     gap: 16,
-    display: "flex",
+    marginBottom: 50,
   },
   title: {
     fontFamily: "Manrope",
@@ -79,10 +97,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 27,
     color: "#000000",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
   },
 });

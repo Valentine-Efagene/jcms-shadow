@@ -22,14 +22,14 @@ export const unstable_settings = {
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-    Manrope: require("../assets/fonts/Manrope-VariableFont_wght.ttf"),
-    ...FontAwesome.font,
+    //Manrope: require("../assets/fonts/Manrope-VariableFont_wght.ttf"),
+    //...FontAwesome.font,
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
-    //if (error) throw error;
-    if (error) console.log(error);
+    if (error) throw error;
+    //if (error) console.log(error);
   }, [error]);
 
   return (

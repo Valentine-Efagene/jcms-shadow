@@ -33,7 +33,8 @@ export default function Login() {
           />
         </View>
         <Text style={styles.redirection}>
-          Don’t have an account? <Link href={"/registration"}>Sign up</Link>
+          Don&apos;t have an account?{" "}
+          <Link href={"/registration"}>Sign up</Link>
         </Text>
       </ScrollView>
     </SafeAreaView>
@@ -45,8 +46,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
-    flexGrow: 1,
-    display: "flex",
     paddingBottom: 150,
   },
   crm: {
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: "auto",
-    height: "30%",
+    height: 200,
     backgroundColor: "#151646",
   },
   crmText: {

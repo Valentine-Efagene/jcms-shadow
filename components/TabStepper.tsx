@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: "auto",
     gap: 4,
+    justifyContent: "center",
   },
   active: {
     width: 16,

@@ -7,9 +7,9 @@ interface IStepper extends ViewProps {
   options: number[];
 }
 
-const Stepper = ({ current, setCurrent, options }: IStepper) => {
+const Stepper = ({ current, setCurrent, options, style }: IStepper) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {options.map((option) => (
         <TouchableOpacity
           key={option}
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: "auto",
     gap: 4,
+    justifyContent: "center",
   },
   active: {
     width: 16,

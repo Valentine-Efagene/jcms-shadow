@@ -62,9 +62,10 @@ const styles = StyleSheet.create({
     gap: 16,
     justifyContent: "space-between",
     padding: 16,
+    paddingBottom: 200,
   },
   picker: {
-    marginHorizontal: "auto",
+    alignSelf: "center",
   },
   submit: {
     marginTop: 32,

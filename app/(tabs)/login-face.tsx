@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: "auto",
-    height: "30%",
+    height: 200,
     backgroundColor: "#151646",
   },
   crmText: {
@@ -83,6 +83,6 @@ const styles = StyleSheet.create({
   image: {
     width: 30,
     height: 30,
-    marginHorizontal: "auto",
+    alignSelf: "center",
   },
 });

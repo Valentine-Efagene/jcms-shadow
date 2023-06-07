@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
   scrollView: {
     flexGrow: 1,
     display: "flex",
-    paddingBottom: 200,
+    paddingBottom: 100,
   },
   crm: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: "auto",
-    height: "30%",
+    height: 200,
     backgroundColor: "#151646",
   },
   crmText: {

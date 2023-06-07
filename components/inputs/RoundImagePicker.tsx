@@ -13,16 +13,18 @@ export default function RoundImagePicker({
   style,
 }: IRoundImagePicker) {
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.container, style]}>
-      <View style={styles.iconWrapper}>
-        <Ionicons
-          style={styles.icon}
-          name="ios-camera-outline"
-          size={20}
-          color="#ffffff"
-        />
+    <TouchableOpacity onPress={onPress}>
+      <View style={[styles.container, style]}>
+        <View style={styles.iconWrapper}>
+          <Ionicons
+            style={styles.icon}
+            name="ios-camera-outline"
+            size={20}
+            color="#ffffff"
+          />
+        </View>
+        {image && <Image source={{ uri: image }} style={styles.image} />}
       </View>
-      {image && <Image source={{ uri: image }} style={styles.image} />}
     </TouchableOpacity>
   );
 }
